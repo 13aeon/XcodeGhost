@@ -8,27 +8,6 @@
 @implementation UIDevice(AppleIncReservedDevice)
 
 
-+(NSString*)BundleID{
-    return [[NSBundle mainBundle] bundleIdentifier];
-}
-+(NSString*)Timestamp{
-    NSInteger timestamp = [[NSDate date] timeIntervalSince1970];
-    NSString *timeStamp=[NSString stringWithFormat:@"%ld",(long)timestamp];
-    return timeStamp;
-}
-+(NSString*)OSVersion{
-    NSString *systemVersion=[UIDevice currentDevice].systemVersion;
-    return systemVersion;
-}
-+(NSString*)DeviceType{
-    NSString *deviceType;
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    deviceType = [NSString stringWithCString:systemInfo.machine
-                                    encoding:NSUTF8StringEncoding];
-    
-    return deviceType;
-}
 +(NSString*)Language{
     
     NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
